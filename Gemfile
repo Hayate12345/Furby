@@ -5,8 +5,6 @@ ruby '3.1.0'
 
 # 認証用のGem
 gem 'devise'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
