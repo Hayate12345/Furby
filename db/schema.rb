@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_24_172958) do
+ActiveRecord::Schema.define(version: 2023_02_24_182346) do
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,20 @@ ActiveRecord::Schema.define(version: 2023_02_24_172958) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "welfare_posts", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "welfare_id"
+    t.string "image", null: false
+    t.string "title", null: false
+    t.string "profile", null: false
+    t.string "appeal_point", null: false
+    t.integer "age", null: false
+    t.string "kinds", null: false
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["welfare_id"], name: "index_welfare_posts_on_welfare_id"
   end
 
   create_table "welfares", charset: "utf8mb4", force: :cascade do |t|
@@ -70,4 +84,5 @@ ActiveRecord::Schema.define(version: 2023_02_24_172958) do
     t.index ["unlock_token"], name: "index_welfares_on_unlock_token", unique: true
   end
 
+  add_foreign_key "welfare_posts", "welfares"
 end
