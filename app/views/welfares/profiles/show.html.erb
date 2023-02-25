@@ -1,6 +1,55 @@
-<% @posts.each do |post| %>
-  <%= post.title %>
-<% end %>
 <div class="container">
-  tets
+  <div class="row">
+    <div class="col-lg-3">
+      サイドバー
+    </div>
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-6 tab-list-item active">
+          投稿した投稿一覧
+        </div>
+        <div class="col-lg-6 tab-list-item">
+          面会希望者一覧
+        </div>
+      </div>
+      <div class="tab-contents-item show">
+        <% @posts.each do |post| %>
+          <div class="bg-light mb-3 px-3 py-3">
+            <div class="row">
+              <div class="col-lg-4">
+                <%= image_tag(post.image.url, class: "img-fluid") %>
+              </div>
+              <div class="col-lg-8">
+                <h4 class="my-4"><%= post.title %></h4>
+                <p><%= post.appeal_point %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-contents-item">
+        タブコンテンツ02
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+  const tabList = document.querySelectorAll('.tab-list-item');
+  const tabContent = document.querySelectorAll('.tab-contents-item');
+
+  document.addEventListener('DOMContentLoaded', function(){
+
+    for(let i = 0; i < tabList.length; i++) {
+      tabList[i].addEventListener('click', tabSwitch);
+    }
+
+    function tabSwitch(){
+      document.querySelectorAll('.active')[0].classList.remove('active');
+      this.classList.add('active');
+      document.querySelectorAll('.show')[0].classList.remove('show');
+      const aryTabs = Array.prototype.slice.call(tabList);
+      const index = aryTabs.indexOf(this);
+      tabContent[index].classList.add('show');
+    };
+  });
+</script>
