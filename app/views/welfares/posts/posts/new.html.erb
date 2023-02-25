@@ -8,6 +8,7 @@
 <%= form_with(model: @post, url: "welfares/posts/create", local: true) do |f| %>
   <div class="mb-3">
     <%= f.text_area :content, class: "form-control", placeholder: "ゴミ拾いの内容を投稿しよう！", rows: 3 %>
+    <label></label>
   </div>
   <%= f.submit "投稿する", class: "btn btn-success px-5" %>
 <% end %>

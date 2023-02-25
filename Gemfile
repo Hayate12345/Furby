@@ -6,6 +6,9 @@ ruby '3.1.0'
 # 認証用のGem
 gem 'devise'
 
+# 画像アップロード用のGem
+gem 'carrierwave'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 # Use mysql as the database for Active Record
