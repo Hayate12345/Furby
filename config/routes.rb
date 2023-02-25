@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   # 動物愛護団体関連
   get "welfares/posts/new", to: "welfares/posts/posts#new"
+  post "welfares/posts/create", to: "welfares/posts/posts#create"
 end
