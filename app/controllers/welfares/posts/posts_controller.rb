@@ -1,6 +1,6 @@
 class Welfares::Posts::PostsController < ApplicationController
-  # ! ログインしていない場合はリダイレクトs
-  before_action :authenticate_welfare!, only: [:show, :edit, :update, :destroy]
+  # ! ログインが必要な処理
+  before_action :authenticate_welfare!, only: [:new, :edit, :update, :destroy]
 
   # ! 投稿を新規作成するメソッド
   def new
