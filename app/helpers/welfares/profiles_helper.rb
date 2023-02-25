@@ -1,0 +1,2 @@
+module Welfares::ProfilesHelper
+end
