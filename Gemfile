@@ -12,6 +12,9 @@ gem "carrierwave"
 # 画面のレイアウト用のGem
 gem "bootstrap"
 
+# Livereload
+gem 'guard-livereload'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.7", ">= 6.1.7.1"
 # Use mysql as the database for Active Record

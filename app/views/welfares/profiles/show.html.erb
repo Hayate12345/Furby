@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      サイドバー
+      <%= render "components/sidebar" %>
     </div>
     <div class="col-lg-9">
       <div class="row">
@@ -13,20 +13,19 @@
         </div>
       </div>
       <div class="tab-contents-item show">
-        <% @posts.each do |post| %>
-          <div class="bg-light mb-3 px-3 py-3">
-            <div class="row">
-              <div class="col-lg-4">
-                <%= image_tag(post.image.url, class: "img-fluid") %>
-              </div>
-              <div class="col-lg-8">
-                <h4 class="my-4"><%= post.title %></h4>
-                <p><%= post.appeal_point %></p>
+        <div class="row">
+          <% @posts.each do |post| %>
+            <div class="card col-lg-3 my-3 mx-1">
+              <%= image_tag(post.image.url, class: "img-fluid") %>
+              <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.appeal_point %></p>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
+      <%# ----------------- %>
       <div class="tab-contents-item">
         タブコンテンツ02
       </div>
