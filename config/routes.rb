@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   root to: "pages/tops#index"
 
-  # 動物愛護団体関連
-  get "welfares/posts/new", to: "welfares/posts/posts#new"
-  post "welfares/posts/create", to: "welfares/posts/posts#create"
-
+  # ! 動物愛護団体関連
+  # * 投稿関連
+  get "welfares/posts/new", to: "welfares/posts#new"
+  post "welfares/posts/create", to: "welfares/posts#create"
+  get "welfares/posts/show/:post_id", to: "welfares/posts#show"
+  # * プロフィール関連
   get "welfares/profiles", to: "welfares/profiles#show"
 end

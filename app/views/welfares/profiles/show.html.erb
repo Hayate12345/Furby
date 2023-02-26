@@ -73,7 +73,9 @@
               <div class="col">
                 <div class="card">
                   <div class="text-center mt-3">
-                    <%= image_tag(post.image.url, class: "animal-image") %>
+                    <%= link_to "/welfares/posts/show/#{post.id}" do %>
+                      <%= image_tag(post.image.url, class: "animal-image") %>
+                    <% end %>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title"><%= post.title %></h5>

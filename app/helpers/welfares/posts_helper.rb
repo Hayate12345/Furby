@@ -1,0 +1,2 @@
+module Welfares::PostsHelper
+end

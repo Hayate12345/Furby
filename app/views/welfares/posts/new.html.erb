@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <%= render "welfares/components/sidebar" %>
+    </div>
+    <div class="col-lg-9">
+      <div class="col-lg-8 mx-auto">
+        <% if @post.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <% @post.errors.each do |error| %>
+              <strong>エラー！</strong> - <%= error.full_message %><br>
+            <% end %>
+          </div>
+        <% end %>
+        <%= form_with(model: @post, url: welfares_posts_create_path, local: true) do |f| %>
+          <div class="mb-3">
+            <%= f.label "掲載する動物の画像", class: "form-label" %>
+            <%= f.file_field :image, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "掲載するタイトル", class: "form-label" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "掲載する動物の紹介", class: "form-label" %>
+            <%= f.text_area :profile, class: "form-control", rows: 5 %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "掲載する動物のアピールポイント", class: "form-label" %>
+            <%= f.text_area :appeal_point, class: "form-control", rows: 5 %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "掲載する動物の年齢", class: "form-label" %>
+            <%= f.number_field :age, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "掲載する動物の種類", class: "form-label" %>
+            <%= f.text_field :kinds, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label "お迎え費用（*発生しない場合は何も記載しないでください。）", class: "form-label" %>
+            <%= f.number_field :price, class: "form-control" %>
+          </div>
+          <%= f.submit "情報を掲載する", class: "btn btn-primary px-5" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
