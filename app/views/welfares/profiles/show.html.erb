@@ -1,54 +1,92 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <%= render "components/sidebar" %>
+      <%= render "welfares/components/sidebar" %>
     </div>
     <div class="col-lg-9">
-      <div class="row">
-        <div class="col-lg-6 tab-list-item active">
-          投稿した投稿一覧
-        </div>
-        <div class="col-lg-6 tab-list-item">
-          面会希望者一覧
-        </div>
-      </div>
-      <div class="tab-contents-item show">
-        <div class="row">
-          <% @posts.each do |post| %>
-            <div class="card col-lg-3 my-3 mx-1">
-              <%= image_tag(post.image.url, class: "img-fluid") %>
-              <div class="card-body">
-                <h5 class="card-title"><%= post.title %></h5>
-                <p class="card-text"><%= post.appeal_point %></p>
+      <%# profileの場所 %>
+      <div>
+        <section class="h-100 gradient-custom-2">
+          <div class="mb-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col">
+                <div class="card">
+                  <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                    <div class="ms-4 mt-5 d-flex flex-column" style="width: 170px;">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 170px; z-index: 1">
+                      <button type="button" class="btn btn-primary" data-mdb-ripple-color="dark"
+                style="z-index: 1;">
+                        プロフィールを編集
+                      </button>
+                    </div>
+                    <div class="ms-3" style="margin-top: 160px;">
+                      <h5><%= current_welfare.group_name %></h5>
+                    </div>
+                  </div>
+                  <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                    <div class="d-flex justify-content-end text-center py-1">
+                      <div>
+                        <p class="mb-1 h5">253</p>
+                        <p class="small text-muted mb-0">投稿数</p>
+                      </div>
+                      <div class="px-3">
+                        <p class="mb-1 h5">1026</p>
+                        <p class="small text-muted mb-0">いいね数</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4 text-black">
+                    <div class="">
+                      <p class="lead fw-normal mb-1 mx-1">団体について</p>
+                      <div class="p-4" style="background-color: #f8f9fa;">
+                        <p class="font-italic mb-1"><%= current_welfare.email %></p>
+                        <p class="font-italic mb-1"><%= current_welfare.address %></p>
+                        <p class="font-italic mb-1"><%= current_welfare.tel %></p>
+                        <p class="font-italic mb-1"><%= current_welfare.website %></p>
+                        <p class="font-italic mb-1"><%= current_welfare.profile %></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          <% end %>
+          </div>
+        </section>
+      </div>
+      <%# ------------------------------------------- %>
+      <!-- タブ部分 -->
+      <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true">投稿した投稿</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane" aria-selected="false">面会可能日</button>
+        </li>
+      </ul>
+      <!-- パネル部分 -->
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+          <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 my-3">
+            <% @posts.each do |post| %>
+              <div class="col">
+                <div class="card">
+                  <div class="text-center mt-3">
+                    <%= image_tag(post.image.url, class: "animal-image") %>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= post.title %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          <p>これは、<strong>プロフィールタブ</strong>に関連付けられたコンテンツのプレースホルダコンテンツ。...</p>
         </div>
       </div>
-      <%# ----------------- %>
-      <div class="tab-contents-item">
-        タブコンテンツ02
-      </div>
+      <%# --------------------------------------- %>
     </div>
   </div>
-</div>
-<script>
-  const tabList = document.querySelectorAll('.tab-list-item');
-  const tabContent = document.querySelectorAll('.tab-contents-item');
-
-  document.addEventListener('DOMContentLoaded', function(){
-
-    for(let i = 0; i < tabList.length; i++) {
-      tabList[i].addEventListener('click', tabSwitch);
-    }
-
-    function tabSwitch(){
-      document.querySelectorAll('.active')[0].classList.remove('active');
-      this.classList.add('active');
-      document.querySelectorAll('.show')[0].classList.remove('show');
-      const aryTabs = Array.prototype.slice.call(tabList);
-      const index = aryTabs.indexOf(this);
-      tabContent[index].classList.add('show');
-    };
-  });
-</script>
