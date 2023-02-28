@@ -9,9 +9,24 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <%= yield %>
+    <div class="col-lg-8 mx-auto">
+      <% if notice %>
+        <div class="alert alert-danger" role="alert">
+          <strong>エラー！</strong> - <%= notice %><br>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-danger" role="alert">
+          <strong>エラー！</strong> - <%= alert %><br>
+        </div>
+      <% end %>
+    </div>
+    <%# <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+    <div class="container my-5">
+      <%= yield %>
+    </div>
   </body>
 </html>
