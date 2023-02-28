@@ -1,3 +1,19 @@
-// Place all the styles related to the welfares/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.animal-image-detail {
+    height: 500px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.bg_dark {
+    background-color: black;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.card-img-overlay {
+    margin-top: 400PX;
+}
+
+.detail-title {
+    padding-bottom: 30px;
+}

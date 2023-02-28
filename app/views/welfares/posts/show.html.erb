@@ -4,6 +4,49 @@
       <%= render "welfares/components/sidebar" %>
     </div>
     <div class="col-lg-9">
+      <div class="card bg-dark text-white col-lg-7 mx-auto">
+        <div class="bg_dark">
+          <%= image_tag(@post.image.url, class: "card-img animal-image-detail") %>
+        </div>
+        <div class="card-img-overlay">
+          <h5 class="card-title text-white fw-bold"><%= @post.title %></h5>
+          <p class="card-text text-white"><%= @post.kinds %> &#047; <%= @post.age %>歳</p>
+        </div>
+      </div>
+      <div class="my-5 py-5 col-lg-7 mx-auto">
+        <h4 class="detail-title"><%= @post.title %></h4>
+        <div class="my-4">
+          <h5>自己紹介</h5>
+          <p><%= @post.profile %></p>
+        </div>
+        <div class="my-4">
+          <h5>性格・アピールポイント</h5>
+          <p><%= @post.appeal_point %></p>
+        </div>
+        <div class="my-4">
+          <h5>種類・年齢</h5>
+          <p><%= @post.kinds %> &#047; <%= @post.age %>歳</p>
+        </div>
+        <div class="my-4">
+          <h5>お迎え費用</h5>
+          <p>
+            <% if @post.price == nil %>
+              お迎え費用は発生しません。
+            <% else %>
+              ¥<%= @post.price %>
+            <% end %>
+          </p>
+        </div>
+        <div class="my-4">
+          <h5>ボタン類</h5>
+          <%= link_to "Some Page" do %>
+            <button>編集</button>
+          <% end %>
+          <%= link_to "Some Page" do %>
+            <button>削除</button>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
