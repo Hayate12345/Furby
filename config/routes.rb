@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get "welfares/posts/new", to: "welfares/posts#new"
   post "welfares/posts/create", to: "welfares/posts#create"
   get "welfares/posts/show/:post_id", to: "welfares/posts#show"
+  get "welfares/posts/edit/:post_id", to: "welfares/posts#edit"
+  patch "welfares/posts/update/:post_id", to: "welfares/posts#update"
+  delete "welfares/posts/destroy/:post_id", to: "welfares/posts#destroy"
   # * プロフィール関連
   get "welfares/profiles", to: "welfares/profiles#show"
 end

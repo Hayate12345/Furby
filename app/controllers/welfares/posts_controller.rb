@@ -1,12 +1,12 @@
 class Welfares::PostsController < ApplicationController
   # ! ログインが必要な処理
-  before_action :authenticate_welfare!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_welfare!, only: [:show, :new, :create, :edit, :update, :destroy]
 
   # ! 投稿の詳細を表示するメソッド
   def show
     @post = WelfarePost.find(params[:post_id])
 
-    # * 投稿していない情報は表示しない
+    # * 投稿者でない場合はリダイレクトする
     if @post.welfare_id != current_welfare.id
       redirect_to "/welfares/profiles"
     end
@@ -28,6 +28,47 @@ class Welfares::PostsController < ApplicationController
       redirect_to "welfares/profiles"
     else
       render :new
+    end
+  end
+
+  # ! 投稿を編集するメソッド
+  def edit
+    @post = WelfarePost.find(params[:post_id])
+
+    # * 投稿者でない場合はリダイレクトする
+    if @post.welfare_id != current_welfare.id
+      redirect_to "/welfares/profiles"
+    end
+  end
+
+  # ! 投稿を編集するメソッド
+  def update
+    @post = WelfarePost.find(params[:post_id])
+
+    # * 投稿者でない場合はリダイレクトする
+    if @post.welfare_id != current_welfare.id
+      redirect_to "/welfares/profiles"
+    end
+
+    if @post.update(post_params)
+      redirect_to "/welfares/profiles"
+    else
+      redirect_to "/welfares/profiles"
+    end
+  end
+
+  def destroy
+    @post = WelfarePost.find(params[:post_id])
+
+    # * 投稿者でない場合はリダイレクトする
+    if @post.welfare_id != current_welfare.id
+      redirect_to "/welfares/profiles"
+    end
+
+    if @post.destroy
+      redirect_to "/welfares/profiles"
+    else
+      redirect_to "/welfares/profiles"
     end
   end
 

@@ -17,3 +17,14 @@
 .detail-title {
     padding-bottom: 30px;
 }
+
+.form-image-box {
+    margin-left: 50px;
+}
+
+.form-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
