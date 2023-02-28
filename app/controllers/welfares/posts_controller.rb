@@ -68,7 +68,7 @@ class Welfares::PostsController < ApplicationController
     if @post.destroy
       redirect_to "/welfares/profiles"
     else
-      redirect_to "/welfares/profiles"
+      redirect_to "/welfares/post"
     end
   end
 
