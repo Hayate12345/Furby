@@ -11,6 +11,7 @@ gem "carrierwave"
 
 # 画面のレイアウト用のGem
 gem "bootstrap"
+gem 'jquery-rails'
 
 # Livereload
 gem 'guard-livereload'
