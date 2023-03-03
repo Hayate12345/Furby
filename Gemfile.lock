@@ -295,7 +295,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   devise
-  guard-livereload
+  guard-livereload (= 2.5.2)
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)

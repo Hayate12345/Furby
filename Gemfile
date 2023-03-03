@@ -14,7 +14,7 @@ gem "bootstrap"
 gem 'jquery-rails'
 
 # Livereload
-gem 'guard-livereload'
+gem 'guard-livereload', '2.5.2', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.7", ">= 6.1.7.1"
