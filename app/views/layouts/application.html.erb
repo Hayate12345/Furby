@@ -9,6 +9,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
     <div class="col-lg-8 mx-auto">
       <% if notice %>
         <div class="alert alert-success" role="alert">
@@ -22,11 +25,8 @@
       <% end %>
     </div>
     <%# <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <header>
-      <%= render "layouts/header" %>
-    </header>
-    <div class="container my-5">
+    <main>
       <%= yield %>
-    </div>
+    </main>
   </body>
 </html>
