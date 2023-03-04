@@ -1,21 +1,23 @@
-.tab-list-item {
-    text-align: center;
-    background-color: #eee;
-    padding: 10px 0;
+// ! プロフィール関連
+.profile-btn {
+    button {
+        background-color: #6ccce4;
+    }
+    button:hover {
+        background-color: #67c3da;
+        border: none;
+        color: black;
+    }
 }
 
-.tab-list-item.active {
-    background-color: #7FCCE3;
+.font-italic {
+    i {
+        font-size: 17px;
+        margin-right: 5px;
+    }
 }
 
-.tab-contents-item {
-    display: none;
-}
-
-.tab-contents-item.show {
-    display: block;
-}
-
+// ! ペット関連
 .animal-image {
     width: 200px;
     height: 200px;

@@ -4,25 +4,25 @@
       <%= render "welfares/components/sidebar" %>
     </div>
     <div class="col-lg-9">
-      <%# profileの場所 %>
       <div>
         <section class="h-100 gradient-custom-2">
           <div class="mb-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
               <div class="col">
                 <div class="card">
-                  <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
-                    <div class="ms-4 mt-5 d-flex flex-column" style="width: 170px;">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                style="width: 170px; z-index: 1">
-                      <button type="button" class="btn btn-primary" data-mdb-ripple-color="dark"
-                style="z-index: 1;">
+                  <div class="rounded-top text-white d-flex flex-row" style="background-color: #6ccce4; height:200px;">
+                    <div class="ms-4 mt-5 d-flex flex-column profile-btn" style="width: 170px;">
+                      <% if current_welfare.icon %>
+                        <%= image_tag(current_welfare.icon.url, class: "img-fluid img-thumbnail mt-4 mb-2", style: "width: 170px; z-index: 1") %>
+                      <% else %>
+                        <%= image_tag("/assets/logo.png", class: "img-fluid img-thumbnail mt-4 mb-2", style: "width: 170px; z-index: 1") %>
+                      <% end %>
+                      <button type="button" class="btn" style="z-index: 1;">
                         プロフィールを編集
                       </button>
                     </div>
                     <div class="ms-3" style="margin-top: 160px;">
-                      <h5><%= current_welfare.group_name %></h5>
+                      <h5 class="text-dark fw-bold"><%= current_welfare.group_name %></h5>
                     </div>
                   </div>
                   <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -41,11 +41,25 @@
                     <div class="">
                       <p class="lead fw-normal mb-1 mx-1">団体について</p>
                       <div class="p-4" style="background-color: #f8f9fa;">
-                        <p class="font-italic mb-1"><%= current_welfare.email %></p>
-                        <p class="font-italic mb-1"><%= current_welfare.address %></p>
-                        <p class="font-italic mb-1"><%= current_welfare.tel %></p>
-                        <p class="font-italic mb-1"><%= current_welfare.website %></p>
-                        <p class="font-italic mb-1"><%= current_welfare.profile %></p>
+                        <p class="font-italic mb-1">
+                          <i class="fa-solid fa-envelope"></i>
+                          <%= current_welfare.email %>
+                        </p>
+                        <p class="font-italic mb-1">
+                          <i class="fa-solid fa-address-book"></i>
+                          <%= current_welfare.address %>
+                        </p>
+                        <p class="font-italic mb-1">
+                          <i class="fa-solid fa-phone"></i>
+                          <%= current_welfare.tel %>
+                        </p>
+                        <p class="font-italic mb-1">
+                          <i class="fa-solid fa-link"></i>
+                          <%= current_welfare.website %>
+                        </p>
+                        <p class="font-italic mb-1">
+                          <%= current_welfare.profile %>
+                        </p>
                       </div>
                     </div>
                   </div>
