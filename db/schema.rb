@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2023_02_24_182346) do
 
   create_table "welfares", charset: "utf8mb4", force: :cascade do |t|
     t.string "group_name", null: false
+    t.string "icon"
     t.string "address", null: false
     t.integer "tel", null: false
     t.string "profile"

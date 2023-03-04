@@ -1,6 +1,16 @@
 // ! sidebar関連
 .sidebar {
     border-radius: 10px;
+    .nav-pills {
+        a:hover {
+            background-color: #6ccce4;
+            color: #ffffff;
+        }
+        i {
+            font-size: 17px;
+            margin-right: 5px;
+        }
+    }
 }
 
 .btn-toggle {

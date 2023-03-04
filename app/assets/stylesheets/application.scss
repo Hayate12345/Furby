@@ -1,7 +1,6 @@
     @import "welfares/profiles";
     @import "welfares/posts";
     @import "welfares/layouts";
-    @import '@fortawesome/fontawesome-free/scss/fontawesome';
     // ! デフォルトの空白を初期化
     body {
         padding: 0;
@@ -35,11 +34,9 @@
         padding-right: 20px;
         a {
             background-color: #FFBB1E;
-            color: #f6f6f6;
         }
         a:hover {
             background-color: #eeaf1b;
-            color: #f6f6f6;
             border: none;
         }
         ul a {
@@ -55,11 +52,9 @@
     .users-dropdown {
         a {
             background-color: #6ccce4;
-            color: #f6f6f6;
         }
         a:hover {
             background-color: #67c3da;
-            color: #f6f6f6;
             border: none;
         }
         ul a {

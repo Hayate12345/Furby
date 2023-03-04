@@ -5,6 +5,7 @@ class DeviseCreateWelfares < ActiveRecord::Migration[6.1]
     create_table :welfares do |t|
       # original
       t.string :group_name, null: false
+      t.string :icon, null: true
       t.string :address, null: false
       t.integer :tel, null: false
       t.string :profile, null: true
