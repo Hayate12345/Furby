@@ -6,6 +6,7 @@ import 'bootstrap';
 import '../stylesheets/application.scss';
 require('jquery');
 import './welfares/posts';
+import '@fortawesome/fontawesome-free/js/all';
 
 // * フラッシュメッセージを4秒後に消す
 $(function() {

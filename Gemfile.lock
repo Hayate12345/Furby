@@ -108,6 +108,8 @@ GEM
     eventmachine (1.2.7)
     execjs (2.8.1)
     ffi (1.15.5)
+    font-awesome-sass (6.3.0)
+      sassc (~> 2.0)
     formatador (1.1.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -295,6 +297,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   devise
+  font-awesome-sass
   guard-livereload (= 2.5.2)
   jbuilder (~> 2.7)
   jquery-rails
